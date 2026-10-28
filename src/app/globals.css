@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy-950: #030c1f;
+  --color-navy-900: #061633;
+  --color-navy-800: #0a2350;
+  --color-navy-700: #0f3272;
+  --color-brand: #1e6bff;
+  --color-brand-light: #4aa3ff;
+  --color-sky: #38c6ff;
+  --color-safety: #ffc61a;
+  --color-steel: #c9d2de;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-navy-950);
+  color: #e6edf7;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(74, 163, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 163, 255, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #4aa3ff, #38c6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.steel-text {
+  background: linear-gradient(180deg, #ffffff 0%, #c9d2de 55%, #8c99ab 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-spin-slow {
+    animation: none;
+  }
+}
